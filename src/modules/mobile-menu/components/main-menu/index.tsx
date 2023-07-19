@@ -23,6 +23,8 @@ const MainMenu = () => {
   const setScreenCountry = () => setScreen("country")
   const setScreenSearch = () => setScreen("search")
 
+  const storeName = process.env.NEXT_PUBLIC_STORE_NAME
+
   return (
     <div className="flex flex-col flex-1">
       <div className="flex items-center justify-between w-full border-b border-gray-200 py-4 px-6">
@@ -36,7 +38,7 @@ const MainMenu = () => {
           </button>
         </div>
         <div>
-          <h1 className="text-xl-semi uppercase">Acme</h1>
+          <h1 className="text-xl-semi uppercase">{storeName}</h1>
         </div>
         <div className="flex-1 basis-0 flex justify-end">
           <button onClick={close}>

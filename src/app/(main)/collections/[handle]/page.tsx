@@ -7,6 +7,8 @@ type Props = {
 
 const BASEURL = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:8000"
 
+const storeName = process.env.NEXT_PUBLIC_STORE_NAME;
+
 async function getCollection(handle: string) {
   const res = await fetch(`${BASEURL}/collections?handle=${handle}`)
 
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { collection } = await getCollection(params.handle)
 
   return {
-    title: `${collection.title} | Acme Store`,
+    title: `${collection.title} | ${storeName} Store`,
     description: `${collection.title} collection`,
   }
 }

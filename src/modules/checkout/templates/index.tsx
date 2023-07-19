@@ -6,6 +6,8 @@ import CheckoutLoader from "../components/checkout-loader"
 import CheckoutForm from "./checkout-form"
 import CheckoutSummary from "./checkout-summary"
 
+const storeName = process.env.NEXT_PUBLIC_STORE_NAME
+
 const CheckoutTemplate = () => {
   return (
     <CheckoutProvider>
@@ -25,7 +27,7 @@ const CheckoutTemplate = () => {
               </>
             </Link>
             <Link href="/" className="text-xl-semi">
-              ACME
+              {storeName}
             </Link>
             <div className="flex-1 basis-0" />
           </nav>

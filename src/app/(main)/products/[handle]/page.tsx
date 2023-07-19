@@ -6,6 +6,8 @@ type Props = {
   params: { handle: string }
 }
 
+const storeName = process.env.NEXT_PUBLIC_STORE_NAME
+
 async function getProducts(handle: string) {
   const res = await medusaRequest("GET", "/products", {
     query: {
@@ -26,10 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = products[0]
 
   return {
-    title: `${product.title} | Acme Store`,
+    title: `${product.title} | ${storeName} Store`,
     description: `${product.title}`,
     openGraph: {
-      title: `${product.title} | Acme Store`,
+      title: `${product.title} | ${storeName} Store`,
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },
