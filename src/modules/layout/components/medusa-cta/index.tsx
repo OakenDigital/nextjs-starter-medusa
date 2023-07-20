@@ -1,3 +1,5 @@
+"use client"
+
 import clsx from "clsx"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -29,7 +31,7 @@ const PoweredBy = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width={205.061}
       height={24}
-      className={clsx({ "fill-stone-600": !isHome }, { "fill-stone-400": isHome })}
+      className={clsx({ "fill-black": !isHome }, { "fill-stone-400": isHome })}
     >
       <defs>
         <path id="a" d="M0 0h20.358v22.957H0z" />

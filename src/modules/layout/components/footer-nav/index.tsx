@@ -19,7 +19,7 @@ const FooterNav = ({ ...props }) => {
   return (
     <div className="content-container flex flex-col justify-center gap-y-8 pt-16 pb-8">
       <div className="flex flex-col-reverse gap-y-4 xsmall:items-center xsmall:flex-row xsmall:items-end xsmall:justify-between">
-        <span className={clsx("text-xsmall-regular", { "text-stone-400": isHome }, { "text-stone-600": !isHome })}>
+        <span className={clsx("text-xsmall-regular", { "text-stone-400": isHome }, { "text-black": !isHome })}>
           © Copyright {new Date().getFullYear()} {storeNameCopyright}
         </span>
         {/* <div className="min-w-[316px] flex xsmall:justify-end">
